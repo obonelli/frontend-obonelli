@@ -1,6 +1,7 @@
 "use client";
 import { Orbitron, Exo_2 } from "next/font/google";
 import "./home.css";
+import Image from "next/image";
 import Section from "./components/home/Section";
 import IconLink from "./components/home/IconLink";
 import ProjectsCarousel from "./components/home/ProjectsCarousel";
@@ -13,7 +14,7 @@ import SoftSkills from "./components/home/SoftSkills";
 // Orbitron solo para headings (tu nombre)
 const orbitron = Orbitron({
   subsets: ["latin"],
-  weight: ["700"], // bold para títulos
+  weight: ["700"],
 });
 
 // Exo 2 para todo el contenido (texto normal/italic/bold)
@@ -27,7 +28,7 @@ export default function HomePage() {
   return (
     <main className={`${exo2.className} pt-16 mx-auto max-w-5xl px-6 pb-24`}>
       {/* Header */}
-      <header className="flex items-start justify-between gap-8">
+      <header className="flex items-start justify-between gap-10">
         <div>
           <h1
             className={`${orbitron.className} text-4xl sm:text-5xl font-bold tracking-tight`}
@@ -75,16 +76,30 @@ export default function HomePage() {
             <IconLink href="/Ing_Oscar_Bonelli.pdf" label="Resume">
               <path
                 fill="currentColor"
-                d="M14 2H6a2 2 0 0 0-2 2v16l6-3 6 3V4a2 2 0 0 0-2-2Z"
+                d="M5 20h14v-2H5v2Zm7-18v12l4-4h-3V4h-2v6H8l4 4V2Z"
               />
             </IconLink>
           </div>
         </div>
 
-        {/* Monograma */}
-        <div className="shrink-0 overflow-hidden rounded-xl ring-1 ring-[var(--color-line)]">
-          <div className="h-24 w-24 monogram-bg grid place-items-center font-black tracking-wider select-none">
-            OB
+        {/* Avatar */}
+        <div className="shrink-0">
+          {/* Marco degradado acorde al sitio */}
+          <div className="rounded-xl p-[2px] bg-[radial-gradient(120%_120%_at_0%_0%,rgba(139,92,246,.35)_0%,rgba(14,165,233,.18)_38%,rgba(244,63,94,.18)_70%,rgba(24,24,27,.6)_100%)] ring-1 ring-[var(--color-line)]">
+            <div className="relative h-28 w-28 overflow-hidden rounded-[10px] bg-zinc-900">
+              <Image
+                src="/obonelli.png"
+                alt="Oscar Bonelli"
+                fill
+                sizes="112px"
+                priority
+                className="object-cover filter brightness-105 contrast-105 saturate-110"
+              />
+              {/* Vignette sutil para darle profundidad */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              {/* Ring interno muy tenue */}
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
+            </div>
           </div>
         </div>
       </header>
