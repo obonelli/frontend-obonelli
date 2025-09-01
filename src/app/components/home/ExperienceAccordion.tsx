@@ -1,17 +1,34 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Drawer from "./Drawer";
 import { orbitron, exo2 } from "@/app/fonts";
 
 export default function ExperienceAccordion() {
+    // 1) Asumimos MOBILE por defecto para que en SSR NO se abra
+    const [isMobile, setIsMobile] = useState(true);
+
+    useEffect(() => {
+        const check = () => {
+            // usa media query para que coincida con sm: (640px)
+            const mq = window.matchMedia("(max-width: 639px)");
+            setIsMobile(mq.matches);
+        };
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+
     return (
         <div className={`${exo2.className} space-y-2`}>
+            {/* 2) key para forzar remount cuando cambia isMobile */}
             <Drawer
+                key={isMobile ? "m" : "d"}
                 title="Cloud Transit Xchange — Lead Full-Stack Engineer"
                 meta="06/2024 – 06/2025"
                 titleClassName={`${orbitron.className} font-bold`}
                 metaClassName="italic"
-                defaultOpen
+                defaultOpen={!isMobile} // abierto sólo en desktop
             >
                 <ul className="drawer-list list-disc pl-5 space-y-1.5 text-sm leading-6 text-zinc-200">
                     <li>Designed and maintained user interfaces using React Native, React.js, HTML5, CSS3, and modern JavaScript (ES6+).</li>

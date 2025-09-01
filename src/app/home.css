@@ -97,8 +97,9 @@
 
 .carousel::-webkit-scrollbar {
     display: none;
-    /* WebKit */
 }
+
+/* WebKit */
 
 /* Flechas laterales reales */
 .carousel-nav {
@@ -123,7 +124,6 @@
 
 .carousel-arrow:hover {
     transform: translateY(calc(-50% - 1px));
-    /* no cambiamos border-color para evitar el mismo parpadeo */
     box-shadow: 0 8px 24px -18px rgba(103, 232, 249, .25);
 }
 
@@ -262,5 +262,70 @@
     .carousel-fade-left,
     .carousel-fade-right {
         width: 36px;
+    }
+}
+
+/* ===== One-page feel & mobile snap ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* contenedor principal: activa snap solo en móvil */
+@media (max-width: 640px) {
+    .snap-mobile {
+        scroll-snap-type: y proximity;
+    }
+
+    .snap-section {
+        scroll-snap-align: start;
+        scroll-margin-top: 72px;
+        /* compensa el padding top */
+    }
+}
+
+/* ===== Bloques de sección ===== */
+/* Base (mobile-first) */
+.section-block {
+    margin-top: 2.25rem;
+    /* ~mt-9 */
+    padding-top: 0.25rem;
+}
+
+/* Desktop compacto (≥640px) */
+@media (min-width: 640px) {
+    .section-block {
+        margin-top: 1rem;
+        padding-top: 0;
+    }
+
+    /* compacto */
+    .section-block:first-of-type {
+        margin-top: 0.5rem;
+    }
+
+    /* más pegado al header */
+    .section-block h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    /* menos respiro bajo título */
+
+    /* el snap solo en mobile; en desktop se desactiva por suavidad */
+    .snap-section {
+        scroll-snap-align: none;
+    }
+
+    /* reduce el espacio entre drawers en desktop */
+    .drawer+.drawer {
+        margin-top: 8px;
+    }
+
+    /* antes 10px */
+}
+
+/* Pantallas grandes (≥1024px): mantiene compacto */
+@media (min-width: 1024px) {
+    .section-block {
+        margin-top: 1rem;
     }
 }

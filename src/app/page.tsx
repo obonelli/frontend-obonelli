@@ -12,52 +12,30 @@ import Skills from "./components/home/Skills";
 import SoftSkills from "./components/home/SoftSkills";
 
 // Orbitron solo para headings (tu nombre)
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+const orbitron = Orbitron({ subsets: ["latin"], weight: ["700"] });
 
 // Exo 2 para todo el contenido (texto normal/italic/bold)
-const exo2 = Exo_2({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-});
+const exo2 = Exo_2({ subsets: ["latin"], weight: ["400", "700"], style: ["normal", "italic"] });
 
 export default function HomePage() {
   return (
-    <main className={`${exo2.className} mx-auto max-w-5xl pb-24 pt-14 sm:pt-16 px-4 sm:px-6`}>
+    <main
+      className={`${exo2.className} mx-auto max-w-5xl pb-24 pt-14 sm:pt-16 px-4 sm:px-6 snap-mobile`}
+    >
       {/* Header */}
-      <header
-        className="
-          grid grid-cols-1 gap-5
-          sm:flex sm:items-start sm:justify-between sm:gap-10
-        "
-      >
+      <header className="grid grid-cols-1 gap-5 sm:flex sm:items-start sm:justify-between sm:gap-10">
         {/* Texto */}
         <div className="order-2 sm:order-1 text-center sm:text-left">
-          <h1
-            className={`${orbitron.className} text-[28px] leading-tight sm:text-4xl font-bold tracking-tight`}
-          >
+          <h1 className={`${orbitron.className} text-[28px] leading-tight sm:text-4xl font-bold tracking-tight`}>
             Oscar Antonio Bonelli Nasta
           </h1>
 
-          <p
-            className="
-              mt-2 text-[13.5px] leading-6 text-zinc-300
-              max-w-[65ch] mx-auto sm:mx-0
-            "
-          >
+          <p className="mt-2 text-[13.5px] leading-6 text-zinc-300 max-w-[65ch] mx-auto sm:mx-0">
             Full-Stack / Front-End Engineer focused on building fast, beautiful,
             and reliable web apps that ship to production.
           </p>
 
-          <p
-            className="
-              mt-3 inline-flex items-center gap-2 text-sm text-zinc-400
-              justify-center sm:justify-start
-            "
-          >
+          <p className="mt-3 inline-flex items-center gap-2 text-sm text-zinc-400 justify-center sm:justify-start">
             <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill="currentColor"
@@ -67,17 +45,9 @@ export default function HomePage() {
             Tampico, Tamps, Mexico (Remote)
           </p>
 
-          <div
-            className="
-              mt-4 flex flex-wrap gap-2
-              justify-center sm:justify-start
-            "
-          >
+          <div className="mt-4 flex flex-wrap gap-2 justify-center sm:justify-start">
             <IconLink href="mailto:bonelli.personal@gmail.com" label="Email">
-              <path
-                fill="currentColor"
-                d="M22 6v12H2V6l10 7L22 6Zm-10 5L2 6h20l-10 5Z"
-              />
+              <path fill="currentColor" d="M22 6v12H2V6l10 7L22 6Zm-10 5L2 6h20l-10 5Z" />
             </IconLink>
 
             <IconLink href="https://www.linkedin.com/in/obonelli" label="LinkedIn">
@@ -95,10 +65,7 @@ export default function HomePage() {
             </IconLink>
 
             <IconLink href="/Ing_Oscar_Bonelli.pdf" label="Resume">
-              <path
-                fill="currentColor"
-                d="M5 20h14v-2H5v2Zm7-18v12l4-4h-3V4h-2v6H8l4 4V2Z"
-              />
+              <path fill="currentColor" d="M5 20h14v-2H5v2Zm7-18v12l4-4h-3V4h-2v6H8l4 4V2Z" />
             </IconLink>
           </div>
         </div>
@@ -122,38 +89,52 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Secciones */}
-      <Section title="About">
-        <ul className="list-disc pl-5 space-y-3 text-[13.5px] leading-6 text-zinc-300">
-          <li>Creator of Realities — Builder of Worlds through code and imagination.</li>
-          <li>I’m a software developer fully committed to delivering high-quality work and meeting deadlines.</li>
-          <li>I love turning fresh ideas into real, innovative solutions that bring value.</li>
-          <li>I enjoy working in teams and sharing knowledge to help others grow.</li>
-          <li>Challenges fuel me — they push me to achieve results and keep growing.</li>
-        </ul>
-      </Section>
+      {/* Secciones con “bloques” y snap en móvil */}
+      <div className="section-block snap-section">
+        <Section title="About">
+          <ul className="list-disc pl-5 space-y-2 text-[13px] leading-5 text-zinc-300">
+            <li>Creator of Realities — Builder of Worlds through code and imagination.</li>
+            <li>I’m a software developer fully committed to delivering high-quality work and meeting deadlines.</li>
+            <li>I love turning fresh ideas into real, innovative solutions that bring value.</li>
+            <li>I enjoy working in teams and sharing knowledge to help others grow.</li>
+            <li>Challenges fuel me — they push me to achieve results and keep growing.</li>
+          </ul>
+        </Section>
+      </div>
 
-      <Section title="Experience">
-        <ExperienceAccordion />
-      </Section>
+      <div className="section-block snap-section">
+        <Section title="Experience">
+          <ExperienceAccordion />
+        </Section>
+      </div>
 
-      <Section title="Education">
-        <EducationAccordion />
-      </Section>
+      <div className="section-block snap-section">
+        <Section title="Education">
+          <EducationAccordion />
+        </Section>
+      </div>
 
-      <ProjectsCarousel />
+      <div className="section-block snap-section">
+        <ProjectsCarousel />
+      </div>
 
-      <Section title="Certifications">
-        <CertificationsAccordion />
-      </Section>
+      <div className="section-block snap-section">
+        <Section title="Certifications">
+          <CertificationsAccordion />
+        </Section>
+      </div>
 
-      <Section title="Skills">
-        <Skills />
-      </Section>
+      <div className="section-block snap-section">
+        <Section title="Skills">
+          <Skills />
+        </Section>
+      </div>
 
-      <Section title="Soft Skills">
-        <SoftSkills />
-      </Section>
+      <div className="section-block snap-section">
+        <Section title="Soft Skills">
+          <SoftSkills />
+        </Section>
+      </div>
 
       <footer className="mt-16 border-t border-[var(--color-line)] pt-6 text-center text-sm text-zinc-500">
         © {new Date().getFullYear()} Oscar Bonelli. Built with Next.js.
