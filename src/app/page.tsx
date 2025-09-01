@@ -6,6 +6,7 @@ import ProjectsCarousel from "./components/home/ProjectsCarousel";
 import TagRow from "./components/home/TagRow";
 import ExperienceAccordion from "./components/home/ExperienceAccordion";
 import EducationAccordion from "./components/home/EducationAccordion";
+import CertificationsAccordion from "./components/home/CertificationsAccordion";
 
 export default function HomePage() {
   return (
@@ -64,12 +65,12 @@ export default function HomePage() {
         </p>
       </Section>
 
-      {/* Experience → ahora Drawer minimalista */}
+      {/* Experience */}
       <Section title="Experience">
         <ExperienceAccordion />
       </Section>
 
-      {/* Education → ahora Drawer minimalista */}
+      {/* Education */}
       <Section title="Education">
         <EducationAccordion />
       </Section>
@@ -77,13 +78,9 @@ export default function HomePage() {
       {/* Projects — Carousel */}
       <ProjectsCarousel />
 
-      {/* Certifications (si prefieres, luego lo pasamos a drawer también) */}
+      {/* Certifications */}
       <Section title="Certifications">
-        {/* simple list as tags or LineItems; puedes crear otro Drawer si quieres */}
-        <div className="space-y-2">
-          <div className="text-sm text-zinc-300">Google Analytics (foundational) — 2023</div>
-          <div className="text-sm text-zinc-300">Neo4j GraphAcademy (TypeScript) — 2024</div>
-        </div>
+        <CertificationsAccordion />
       </Section>
 
       {/* Skills */}
