@@ -3,10 +3,11 @@ import "./home.css";
 import Section from "./components/home/Section";
 import IconLink from "./components/home/IconLink";
 import ProjectsCarousel from "./components/home/ProjectsCarousel";
-import TagRow from "./components/home/TagRow";
 import ExperienceAccordion from "./components/home/ExperienceAccordion";
 import EducationAccordion from "./components/home/EducationAccordion";
 import CertificationsAccordion from "./components/home/CertificationsAccordion";
+import Skills from "./components/home/Skills";
+import SoftSkills from "./components/home/SoftSkills";
 
 export default function HomePage() {
   return (
@@ -37,7 +38,7 @@ export default function HomePage() {
             <IconLink href="mailto:obonelli@gmail.com" label="Email">
               <path fill="currentColor" d="M22 6v12H2V6l10 7L22 6Zm-10 5L2 6h20l-10 5Z" />
             </IconLink>
-            <IconLink href="https://www.linkedin.com/in/oscar-bonelli" label="LinkedIn">
+            <IconLink href="https://www.linkedin.com/in/obonelli" label="LinkedIn">
               <path fill="currentColor" d="M6.94 8.5H4V20h2.94V8.5ZM5.47 7.06A1.53 1.53 0 1 0 5.47 4a1.53 1.53 0 0 0 0 3.06ZM20 20h-2.93v-6.2c0-1.48-.53-2.49-1.84-2.49-1 0-1.6.68-1.86 1.33-.1.23-.13.55-.13.87V20H10.3s.04-9.77 0-10.8h2.93v1.53c.39-.6 1.09-1.46 2.66-1.46 1.94 0 3.4 1.27 3.4 4V20Z" />
             </IconLink>
             <IconLink href="https://github.com/Obonelli" label="GitHub">
@@ -85,31 +86,12 @@ export default function HomePage() {
 
       {/* Skills */}
       <Section title="Skills">
-        <TagRow
-          items={[
-            "React / Next.js",
-            "TypeScript",
-            "MUI / Tailwind",
-            "Node.js",
-            "PostgreSQL",
-            "GraphQL / REST",
-            "Vercel / GCP",
-            "Nx / CI-CD",
-          ]}
-        />
+        <Skills />
       </Section>
 
       {/* Soft Skills */}
       <Section title="Soft Skills">
-        <TagRow
-          items={[
-            "Problem-solving",
-            "Leadership",
-            "Communication",
-            "Critical thinking",
-            "Growth mindset",
-          ]}
-        />
+        <SoftSkills />
       </Section>
 
       <footer className="mt-16 border-t border-[var(--color-line)] pt-6 text-center text-sm text-zinc-500">
