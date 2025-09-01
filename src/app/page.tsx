@@ -31,7 +31,7 @@ export default function HomePage() {
       <header className="flex items-start justify-between gap-10">
         <div>
           <h1
-            className={`${orbitron.className} text-4xl sm:text-5xl font-bold tracking-tight`}
+            className={`${orbitron.className} text-3xl sm:text-4xl font-bold tracking-tight`}
           >
             Oscar Antonio Bonelli Nasta
           </h1>
