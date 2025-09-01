@@ -10,16 +10,18 @@ export default function ProjectsCarousel() {
 
     const projects: Project[] = [
         {
-            title: "SwiftFund UI Kit",
-            desc: "Design-system-first React components tuned for dashboards.",
-            tags: ["React", "MUI", "Tailwind", "Storybook"],
+            title: "Lunara Games",
+            desc:
+                "Indie studio focused on crafting 2D experiences with AI-driven NPCs. Starting simple with CSS and Canvas, evolving into richer cross-platform worlds.",
+            tags: ["JavaScript", "Canvas", "AI NPCs", "Cross-Platform"],
             href: "#",
             live: false,
         },
         {
-            title: "Help Center / FAQ",
-            desc: "Modular knowledge base with categories, search and attachments.",
-            tags: ["Next.js", "GraphQL", "UI-Kit"],
+            title: "SaaS Starter Kit (Next.js)",
+            desc:
+                "Production-ready starter: auth, Stripe subscriptions, RBAC, Prisma/PostgreSQL, file uploads and email — ship new products fast.",
+            tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe", "Auth"],
             href: "#",
             live: false,
         },
