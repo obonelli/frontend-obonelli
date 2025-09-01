@@ -28,8 +28,8 @@ export default function ProjectsCarousel() {
         {
             title: "OmniOps LLM Platform",
             desc:
-                "Autonomous AI layer that orchestrates processes, builds a live knowledge graph, and automates operations across the whole app.",
-            tags: ["Next.js", "LLM", "Agents", "Knowledge Graph", "Ops Automation"],
+                "Autonomous AI layer that orchestrates processes, builds a live knowledge graph, and automates operations across the whole app — boosting efficiency and decision-making.",
+            tags: ["Next.js", "LLM", "Agents", "Knowledge Graph", "Ops Automation", "Python"],
             href: "#",
             live: false,
         },
@@ -37,7 +37,7 @@ export default function ProjectsCarousel() {
             title: "AI CV Reviewer",
             desc:
                 "Smart assistant that reviews CVs, highlights strengths, and suggests improvements to boost chances of landing a job.",
-            tags: ["Next.js", "LLM", "Tailwind", "OpenAI"],
+            tags: ["Next.js", "Python", "LLM", "Tailwind", "OpenAI"],
             href: "https://www.luxintenebris.mx/",
             live: true,
         },
