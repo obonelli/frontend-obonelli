@@ -2,17 +2,36 @@
 
 /* Cards como el ejemplo (borde hairline + radius) */
 .prism-card {
+    position: relative;
+    /* para pseudo-elementos */
     background: rgba(16, 18, 22, .65);
     border: 1px solid var(--color-line);
+    /* borde estable */
     border-radius: 12px;
-    /* similar al ejemplo */
-    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+/* highlight en hover SIN tocar el borde físico (evita artefacto arriba) */
+.prism-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    pointer-events: none;
+    /* halo sutil que se hace visible en hover */
+    box-shadow:
+        0 16px 40px -28px rgba(103, 232, 249, .25),
+        inset 0 0 0 1px rgba(255, 255, 255, .03);
+    opacity: 0;
+    transition: opacity .25s ease;
 }
 
 .prism-card:hover {
     transform: translateY(-2px);
-    border-color: #2a2f3a;
-    box-shadow: 0 16px 40px -28px rgba(103, 232, 249, .25);
+}
+
+.prism-card:hover::before {
+    opacity: 1;
 }
 
 /* Doble hairline sutil */
@@ -63,20 +82,23 @@
 .carousel {
     position: relative;
     overflow-x: auto;
+    overflow-y: visible;
     display: flex;
     gap: 16px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
+    padding-top: 12px;
+    /* aire arriba */
+    padding-bottom: 16px;
+    /* aire abajo */
     scrollbar-width: none;
     /* Firefox */
 }
 
 .carousel::-webkit-scrollbar {
     display: none;
+    /* WebKit */
 }
-
-/* WebKit */
 
 /* Flechas laterales reales */
 .carousel-nav {
@@ -100,20 +122,18 @@
 }
 
 .carousel-arrow:hover {
-    transform: translateY(-50%) translateY(-1px);
-    border-color: #2a2f3a;
+    transform: translateY(calc(-50% - 1px));
+    /* no cambiamos border-color para evitar el mismo parpadeo */
+    box-shadow: 0 8px 24px -18px rgba(103, 232, 249, .25);
 }
 
 .carousel-arrow.left {
     left: -48px;
 }
 
-/* pegada al borde izquierdo */
 .carousel-arrow.right {
     right: -48px;
 }
-
-/* pegada al borde derecho */
 
 /* Fades laterales como máscara */
 .carousel-fade-left,
