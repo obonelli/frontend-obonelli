@@ -58,21 +58,21 @@ export default function HomePage() {
                 d="M22 6v12H2V6l10 7L22 6Zm-10 5L2 6h20l-10 5Z"
               />
             </IconLink>
-            <IconLink
-              href="https://www.linkedin.com/in/obonelli"
-              label="LinkedIn"
-            >
+
+            <IconLink href="https://www.linkedin.com/in/obonelli" label="LinkedIn">
               <path
                 fill="currentColor"
                 d="M6.94 8.5H4V20h2.94V8.5ZM5.47 7.06A1.53 1.53 0 1 0 5.47 4a1.53 1.53 0 0 0 0 3.06ZM20 20h-2.93v-6.2c0-1.48-.53-2.49-1.84-2.49-1 0-1.6.68-1.86 1.33-.1.23-.13.55-.13.87V20H10.3s.04-9.77 0-10.8h2.93v1.53c.39-.6 1.09-1.46 2.66-1.46 1.94 0 3.4 1.27 3.4 4V20Z"
               />
             </IconLink>
+
             <IconLink href="https://github.com/Obonelli" label="GitHub">
               <path
                 fill="currentColor"
                 d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.85 10.94c.58.1.8-.25.8-.57v-2.1c-3.19.7-3.86-1.37-3.86-1.37-.53-1.35-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.17.08 1.78 1.22 1.78 1.22 1.04 1.78 2.74 1.27 3.41.97.1-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.45.12-3.03 0 0 .98-.31 3.22 1.18a11.2 11.2 0 0 1 5.86 0c2.24-1.49 3.22-1.18 3.22-1.18.64 1.58.24 2.74.12 3.03.75.81 1.2 1.84 1.2 3.1 0 4.41-2.68 5.38-5.24 5.66.42.36.8 1.07.8 2.17v3.22c0 .33.21.68.81.57A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"
               />
             </IconLink>
+
             <IconLink href="/Ing_Oscar_Bonelli.pdf" label="Resume">
               <path
                 fill="currentColor"
@@ -84,7 +84,6 @@ export default function HomePage() {
 
         {/* Avatar */}
         <div className="shrink-0">
-          {/* Marco degradado acorde al sitio */}
           <div className="rounded-xl p-[2px] bg-[radial-gradient(120%_120%_at_0%_0%,rgba(139,92,246,.35)_0%,rgba(14,165,233,.18)_38%,rgba(244,63,94,.18)_70%,rgba(24,24,27,.6)_100%)] ring-1 ring-[var(--color-line)]">
             <div className="relative h-28 w-28 overflow-hidden rounded-[10px] bg-zinc-900">
               <Image
@@ -95,9 +94,7 @@ export default function HomePage() {
                 priority
                 className="object-cover filter brightness-105 contrast-105 saturate-110"
               />
-              {/* Vignette sutil para darle profundidad */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              {/* Ring interno muy tenue */}
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
             </div>
           </div>
@@ -106,7 +103,9 @@ export default function HomePage() {
 
       {/* Secciones */}
       <Section title="About">
-        <ul className={`${exo2.className} list-disc pl-5 space-y-2 text-sm leading-7 text-zinc-300`}>
+        <ul
+          className={`${exo2.className} list-disc pl-5 space-y-3 text-sm leading-relaxed text-zinc-300`}
+        >
           <li>Creator of Realities — Builder of Worlds through code and imagination.</li>
           <li>I’m a software developer fully committed to delivering high-quality work and meeting deadlines.</li>
           <li>I love turning fresh ideas into real, innovative solutions that bring value.</li>
