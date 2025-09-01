@@ -230,3 +230,37 @@
     color: #c6c8cd;
     font-size: 14px;
 }
+
+/* ===== Mobile polish (≤640px) ===== */
+@media (max-width: 640px) {
+    .prism-card {
+        border-radius: 10px;
+    }
+
+    .prism-card::before {
+        border-radius: 10px;
+    }
+
+    .drawer {
+        border-radius: 10px;
+    }
+
+    .drawer-btn {
+        padding: 12px 14px;
+    }
+
+    .drawer-content {
+        padding: 10px 14px 14px;
+    }
+
+    /* Flechas del carrusel: ocultas en móviles (se navega por swipe) */
+    .carousel-arrow {
+        display: none;
+    }
+
+    /* Fades laterales más angostos */
+    .carousel-fade-left,
+    .carousel-fade-right {
+        width: 36px;
+    }
+}

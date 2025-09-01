@@ -26,22 +26,38 @@ const exo2 = Exo_2({
 
 export default function HomePage() {
   return (
-    <main className={`${exo2.className} pt-16 mx-auto max-w-5xl px-6 pb-24`}>
+    <main className={`${exo2.className} mx-auto max-w-5xl pb-24 pt-14 sm:pt-16 px-4 sm:px-6`}>
       {/* Header */}
-      <header className="flex items-start justify-between gap-10">
-        <div>
+      <header
+        className="
+          grid grid-cols-1 gap-5
+          sm:flex sm:items-start sm:justify-between sm:gap-10
+        "
+      >
+        {/* Texto */}
+        <div className="order-2 sm:order-1 text-center sm:text-left">
           <h1
-            className={`${orbitron.className} text-3xl sm:text-4xl font-bold tracking-tight`}
+            className={`${orbitron.className} text-[28px] leading-tight sm:text-4xl font-bold tracking-tight`}
           >
             Oscar Antonio Bonelli Nasta
           </h1>
 
-          <p className="mt-2 text-sm leading-relaxed text-zinc-300 max-w-[70ch]">
+          <p
+            className="
+              mt-2 text-[13.5px] leading-6 text-zinc-300
+              max-w-[65ch] mx-auto sm:mx-0
+            "
+          >
             Full-Stack / Front-End Engineer focused on building fast, beautiful,
             and reliable web apps that ship to production.
           </p>
 
-          <p className="mt-3 inline-flex items-center gap-2 text-sm text-zinc-400">
+          <p
+            className="
+              mt-3 inline-flex items-center gap-2 text-sm text-zinc-400
+              justify-center sm:justify-start
+            "
+          >
             <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill="currentColor"
@@ -51,7 +67,12 @@ export default function HomePage() {
             Tampico, Tamps, Mexico (Remote)
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div
+            className="
+              mt-4 flex flex-wrap gap-2
+              justify-center sm:justify-start
+            "
+          >
             <IconLink href="mailto:bonelli.personal@gmail.com" label="Email">
               <path
                 fill="currentColor"
@@ -83,14 +104,14 @@ export default function HomePage() {
         </div>
 
         {/* Avatar */}
-        <div className="shrink-0">
+        <div className="order-1 sm:order-2 justify-self-center sm:justify-self-auto">
           <div className="rounded-xl p-[2px] bg-[radial-gradient(120%_120%_at_0%_0%,rgba(139,92,246,.35)_0%,rgba(14,165,233,.18)_38%,rgba(244,63,94,.18)_70%,rgba(24,24,27,.6)_100%)] ring-1 ring-[var(--color-line)]">
-            <div className="relative h-28 w-28 overflow-hidden rounded-[10px] bg-zinc-900">
+            <div className="relative h-24 w-24 sm:h-28 sm:w-28 overflow-hidden rounded-[10px] bg-zinc-900">
               <Image
                 src="/obonelli.png"
                 alt="Oscar Bonelli"
                 fill
-                sizes="112px"
+                sizes="96px, (min-width: 640px) 112px"
                 priority
                 className="object-cover filter brightness-105 contrast-105 saturate-110"
               />
@@ -103,9 +124,7 @@ export default function HomePage() {
 
       {/* Secciones */}
       <Section title="About">
-        <ul
-          className={`${exo2.className} list-disc pl-5 space-y-3 text-sm leading-relaxed text-zinc-300`}
-        >
+        <ul className="list-disc pl-5 space-y-3 text-[13.5px] leading-6 text-zinc-300">
           <li>Creator of Realities — Builder of Worlds through code and imagination.</li>
           <li>I’m a software developer fully committed to delivering high-quality work and meeting deadlines.</li>
           <li>I love turning fresh ideas into real, innovative solutions that bring value.</li>
