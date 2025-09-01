@@ -35,7 +35,7 @@ export default function HomePage() {
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
-            <IconLink href="mailto:obonelli@gmail.com" label="Email">
+            <IconLink href="mailto:bonelli.personal@gmail.com" label="Email">
               <path fill="currentColor" d="M22 6v12H2V6l10 7L22 6Zm-10 5L2 6h20l-10 5Z" />
             </IconLink>
             <IconLink href="https://www.linkedin.com/in/obonelli" label="LinkedIn">
