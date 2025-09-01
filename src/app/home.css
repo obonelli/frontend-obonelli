@@ -1,0 +1,212 @@
+/* ===== Identidad Obsidian Prism (scoped a esta página) ===== */
+
+/* Cards como el ejemplo (borde hairline + radius) */
+.prism-card {
+    background: rgba(16, 18, 22, .65);
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    /* similar al ejemplo */
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.prism-card:hover {
+    transform: translateY(-2px);
+    border-color: #2a2f3a;
+    box-shadow: 0 16px 40px -28px rgba(103, 232, 249, .25);
+}
+
+/* Doble hairline sutil */
+.inner-border {
+    position: relative;
+}
+
+.inner-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .04);
+    pointer-events: none;
+}
+
+/* Firma: subrayado reactivo */
+.fx-underline {
+    background-image: linear-gradient(90deg, transparent, rgba(103, 232, 249, .35), rgba(192, 132, 252, .35), transparent);
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .4s ease;
+}
+
+.fx-underline:hover {
+    background-size: 100% 2px;
+}
+
+/* Monograma */
+.monogram-bg {
+    background:
+        radial-gradient(120px 120px at 30% 30%, rgba(103, 232, 249, .18), transparent 42%),
+        radial-gradient(120px 120px at 70% 70%, rgba(192, 132, 252, .18), transparent 48%),
+        #0b0d11;
+}
+
+/* Tags */
+.tag {
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-size: 12px;
+    color: var(--color-text);
+}
+
+/* ===== Carrusel ===== */
+.carousel {
+    position: relative;
+    overflow-x: auto;
+    display: flex;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* WebKit */
+
+/* Flechas laterales reales */
+.carousel-nav {
+    position: relative;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 36px;
+    width: 36px;
+    display: grid;
+    place-items: center;
+    background: rgba(16, 18, 22, .75);
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    color: var(--color-foreground);
+    transition: .25s ease;
+    z-index: 2;
+}
+
+.carousel-arrow:hover {
+    transform: translateY(-50%) translateY(-1px);
+    border-color: #2a2f3a;
+}
+
+.carousel-arrow.left {
+    left: -48px;
+}
+
+/* pegada al borde izquierdo */
+.carousel-arrow.right {
+    right: -48px;
+}
+
+/* pegada al borde derecho */
+
+/* Fades laterales como máscara */
+.carousel-fade-left,
+.carousel-fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 56px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel-fade-left {
+    left: 0;
+    background: linear-gradient(90deg, var(--color-ink), transparent);
+}
+
+.carousel-fade-right {
+    right: 0;
+    background: linear-gradient(270deg, var(--color-ink), transparent);
+}
+
+/* ===== Drawers / Accordions (minimal) ===== */
+.drawer {
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    background: rgba(16, 18, 22, .55);
+}
+
+.drawer+.drawer {
+    margin-top: 10px;
+}
+
+.drawer-btn {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    text-align: left;
+    color: var(--color-foreground);
+}
+
+.drawer-btn:hover {
+    background: rgba(255, 255, 255, .02);
+}
+
+.drawer-title {
+    font-weight: 600;
+    letter-spacing: .1px;
+}
+
+/* caret minimal */
+.drawer-caret {
+    height: 24px;
+    width: 24px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #B9BCC3;
+    transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.drawer-btn[aria-expanded="true"] .drawer-caret {
+    transform: rotate(90deg);
+    background: rgba(255, 255, 255, .03);
+    border-color: #2a2f3a;
+}
+
+/* panel con transición de altura (max-height) */
+.drawer-panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .35s ease;
+    border-top: 1px solid transparent;
+}
+
+.drawer-panel.open {
+    border-top-color: var(--color-line);
+}
+
+/* contenido interno del panel */
+.drawer-content {
+    padding: 12px 16px 16px 16px;
+}
+
+/* lista bullets minimal */
+.drawer-list {
+    margin-top: 8px;
+    padding-left: 18px;
+    color: #c6c8cd;
+    font-size: 14px;
+}
