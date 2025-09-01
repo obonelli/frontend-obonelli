@@ -32,9 +32,10 @@ export default function ProjectsCarousel() {
             live: false,
         },
         {
-            title: "Lux in Tenebris",
-            desc: "Minimal agency site with custom color tokens and animations.",
-            tags: ["Next.js", "Tailwind"],
+            title: "AI CV Reviewer",
+            desc:
+                "Smart assistant that reviews CVs, highlights strengths, and suggests improvements to boost chances of landing a job.",
+            tags: ["Next.js", "LLM", "Tailwind", "OpenAI"],
             href: "https://www.luxintenebris.mx/",
             live: true,
         },
