@@ -1,15 +1,9 @@
-// src/app/components/home/CertificationsAccordion.tsx
 "use client";
 import { useMemo } from "react";
 
-/**
- * Lista unificada y minimal de certificaciones/cursos (sin años).
- * Fuente: tu PDF (sección COURSES + los 2 certs). 
- */
-
 type Item = {
     title: string;
-    provider?: string; // Platzi, Coursera, Google, etc.
+    provider?: string;
 };
 
 const ITEMS: Item[] = [
@@ -26,21 +20,18 @@ const ITEMS: Item[] = [
     { title: "MySQL and SQL Server", provider: "Platzi" },
 ];
 
-function iconFor(text?: string) {
-    const v = (text || "").toLowerCase();
-    if (v.includes("google") || v.includes("analytics")) return "📈";
-    if (v.includes("neo4j")) return "🕸️";
-    if (v.includes("amazon") || v.includes("aws")) return "☁️";
-    if (v.includes("coursera")) return "🟦";
-    if (v.includes("edx")) return "🧠";
-    if (v.includes("udemy")) return "🟨";
-    if (v.includes("udacity")) return "🔷";
-    if (v.includes("platzi")) return "🟩";
-    return "📜";
+function badgeColor(provider?: string) {
+    const v = (provider || "").toLowerCase();
+    if (v.includes("amazon")) return "bg-orange-400";
+    if (v.includes("coursera")) return "bg-blue-500";
+    if (v.includes("edx")) return "bg-pink-500";
+    if (v.includes("udemy")) return "bg-yellow-400";
+    if (v.includes("udacity")) return "bg-cyan-500";
+    if (v.includes("platzi")) return "bg-green-500";
+    return "bg-zinc-400";
 }
 
 export default function CertificationsAccordion() {
-    // Orden: proveedor A-Z y luego título A-Z
     const items = useMemo(
         () =>
             [...ITEMS].sort((a, b) => {
@@ -52,7 +43,6 @@ export default function CertificationsAccordion() {
         []
     );
 
-    // UI: grid de “chips-cards” homogéneos (compactos, minimal)
     return (
         <section className="rounded-xl border border-zinc-800/60 bg-zinc-950/40 p-4">
             <div className="flex flex-wrap gap-2">
@@ -62,9 +52,12 @@ export default function CertificationsAccordion() {
                         className="inline-flex items-center gap-2 rounded-full border border-zinc-800/60 bg-zinc-900/60 px-3 py-1.5 text-xs"
                         title={`${c.title}${c.provider ? " · " + c.provider : ""}`}
                     >
-                        <span className="text-base leading-none">
-                            {iconFor(c.provider || c.title)}
-                        </span>
+                        {/* Badge uniforme */}
+                        <span
+                            className={`h-2.5 w-2.5 rounded-full ${badgeColor(
+                                c.provider
+                            )}`}
+                        />
                         <span className="font-medium">{c.title}</span>
                         {c.provider && (
                             <span className="text-[10px] text-zinc-400">· {c.provider}</span>
