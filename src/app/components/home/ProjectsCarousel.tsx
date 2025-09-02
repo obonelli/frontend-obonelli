@@ -34,13 +34,13 @@ export default function ProjectsCarousel() {
             live: false,
         },
         {
-            title: "AI CV Reviewer",
+            title: "Lux In Tenebris — AI Recruitment Platform",
             desc:
-                "Smart assistant that reviews CVs, highlights strengths, and suggests improvements to boost chances of landing a job.",
-            tags: ["Next.js", "Python", "LLM", "Tailwind", "OpenAI"],
+                "Next.js 15 recruitment system that connects candidates with open roles, powered by AI-assisted matching, talent pool search, and technical screening. A modern job board built with scalability and real-time insights in mind.",
+            tags: ["Next.js", "Prisma", "MySQL", "MUI", "NextAuth", "OpenAI"],
             href: "https://www.luxintenebris.mx/",
             live: true,
-        },
+        }
     ];
 
     const scroll = (dx: number) =>
