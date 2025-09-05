@@ -30,8 +30,8 @@ export default function ProjectsCarousel() {
             desc:
                 "Autonomous AI layer that orchestrates processes, builds a live knowledge graph, and automates operations across the whole app — boosting efficiency and decision-making.",
             tags: ["Next.js", "LLM", "Agents", "Knowledge Graph", "Ops Automation", "Python"],
-            href: "#",
-            live: false,
+            href: "https://llmplatform.obonelli.dev/",
+            live: true,
         },
         {
             title: "Lux In Tenebris — AI Recruitment Platform",
@@ -79,7 +79,7 @@ export default function ProjectsCarousel() {
                                 d="M12 1.75A10.25 10.25 0 1 0 22.25 12A10.263 10.263 0 0 0 12 1.75m.75 5a.75.75 0 0 0-1.5 0v5.19a.75.75 0 0 0 .22.53l3.38 3.38a.75.75 0 0 0 1.06-1.06L12.75 12.7Z"
                             />
                         </svg>
-                        Project links/domains go live in ≤ 48h
+                        All projects links/domains will go live soon
                         <button
                             onClick={() => setShowNotice(false)}
                             className="ml-2 text-zinc-400 hover:text-zinc-200 transition"
