@@ -18,13 +18,14 @@ export default function ProjectsCarousel() {
             live: false,
         },
         {
-            title: "SaaS Starter Kit (Next.js)",
+            title: "Raven RAG — Private AI Search (Python + MySQL)",
             desc:
-                "Production-ready starter: auth, Stripe subscriptions, RBAC, Prisma/PostgreSQL, file uploads and email — ship new products fast.",
-            tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe", "Auth"],
+                "Retrieval-Augmented Generation service with FastAPI + Prisma + MySQL. Stores embeddings in MySQL and performs hybrid search with LangChain, packaged with Docker and ready to integrate with Next.js apps.",
+            tags: ["Python", "FastAPI", "RAG", "Prisma", "MySQL", "LangChain", "Embeddings", "Docker"],
             href: "#",
             live: false,
         },
+
         {
             title: "OmniOps LLM Platform",
             desc:

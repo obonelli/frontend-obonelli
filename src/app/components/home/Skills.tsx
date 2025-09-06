@@ -8,6 +8,8 @@ export default function Skills() {
                 "TypeScript",
                 "MUI / Tailwind",
                 "Node.js",
+                "Python",
+                "MySQL",
                 "PostgreSQL",
                 "GraphQL / REST",
                 "Vercel / GCP",

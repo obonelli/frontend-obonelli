@@ -11,12 +11,12 @@ const ITEMS: Item[] = [
     { title: "Advanced JavaScript", provider: "Coursera" },
     { title: "API Design and Development", provider: "Coursera" },
     { title: "Agile Project Management with Scrum", provider: "edX" },
-    { title: "Full-Stack Web Development", provider: "Udemy" },
+    { title: "TypeScript Fundamentals", provider: "Udemy" },
     { title: "Git and GitHub", provider: "Udacity" },
     { title: "React.js", provider: "Platzi" },
     { title: "Tailwind CSS", provider: "Platzi" },
     { title: "Node.js", provider: "Platzi" },
-    { title: "Backend Web Development with PHP", provider: "Platzi" },
+    { title: "Python for Machine Learning", provider: "Platzi" },
     { title: "MySQL and SQL Server", provider: "Platzi" },
 ];
 
