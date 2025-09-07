@@ -22,8 +22,8 @@ export default function ProjectsCarousel() {
             desc:
                 "Retrieval-Augmented Generation service with FastAPI + Prisma + MySQL. Stores embeddings in MySQL and performs hybrid search with LangChain, packaged with Docker and ready to integrate with Next.js apps.",
             tags: ["Python", "FastAPI", "RAG", "Prisma", "MySQL", "LangChain", "Embeddings", "Docker"],
-            href: "#",
-            live: false,
+            href: "https://raven-rag.onrender.com/docs#/",
+            live: true,
         },
 
         {
