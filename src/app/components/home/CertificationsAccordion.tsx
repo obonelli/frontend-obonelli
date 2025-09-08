@@ -9,6 +9,11 @@ type Item = {
 
 const ITEMS: Item[] = [
     {
+        title: "Problem Solving (Intermediate)",
+        provider: "HackerRank",
+        url: "https://www.hackerrank.com/certificates/3d79447a14ab"
+    },
+    {
         title: "Frontend Developer (React)",
         provider: "HackerRank",
         url: "https://www.hackerrank.com/certificates/b625d7705021"
