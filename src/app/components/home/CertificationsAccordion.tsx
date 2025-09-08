@@ -33,11 +33,33 @@ const ITEMS: Item[] = [
         provider: "HackerRank",
         url: "https://www.hackerrank.com/certificates/4847cffedde9"
     },
+    {
+        title: "JavaScript (Advanced)",
+        provider: "LinkedIn Learning",
+        url: "https://www.linkedin.com/learning/certificates/b8868ab729615356c8fd30d5181d31e5be3fdc3f041813919b085d2e19df283c"
+    },
+    {
+        title: "Python (Advanced)",
+        provider: "LinkedIn Learning",
+        url: "https://www.linkedin.com/learning/certificates/4c1c4265b1809c704b96b06f100d87355f5d2b05b9b1d575ae50e4fb56b16891?trk=share_certificate"
+    },
+    {
+        title: "AWS Cloud Practitioner Essentials",
+        provider: "AWS",
+        url: "AWS_Cloud_Practitioner_Essentials.pdf"
+    },
+    {
+        title: "AWS Lambda Foundations",
+        provider: "AWS",
+        url: "AWS_Lambda_Foundations.pdf"
+    }
 ];
 
 function badgeColor(provider?: string) {
     const v = (provider || "").toLowerCase();
     if (v.includes("hackerrank")) return "bg-purple-500";
+    if (v.includes("linkedin")) return "bg-sky-500";
+    if (v === "aws") return "bg-yellow-400"; // 🟡 amarillo para AWS
     return "bg-zinc-400";
 }
 
