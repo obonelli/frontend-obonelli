@@ -6,44 +6,50 @@ on:
     branches: [main]
 
 jobs:
-  # 🔹 Job 1: integración básica
-  ci:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
+      - run: npm ci
+      - run: npm run lint
 
-      - name: Install deps
-        run: npm ci
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run typecheck
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Typecheck
-        run: npm run typecheck
-
+  build:
+    needs: [lint, typecheck]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
       - name: Build
         env:
           NEXT_TELEMETRY_DISABLED: "1"
         run: npm run build
 
-  # 🔹 Job 2: seguridad básica
   security:
-    needs: ci # 👈 ahora depende del job ci
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Dependency Audit
         run: npm audit --production --audit-level=moderate || true
-
       - name: Secret Scan
         uses: trufflesecurity/trufflehog@main
         with:
