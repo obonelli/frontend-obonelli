@@ -87,7 +87,7 @@ export default function ExperienceAccordion() {
             </Drawer>
 
             <Drawer
-                title="Freelancer — Full-Stack Developer"
+                title="Senior Software Engineer"
                 meta="04/2012 – Present"
                 titleClassName={`${orbitron.className} font-bold`}
                 metaClassName="italic"
