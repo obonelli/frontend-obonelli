@@ -4,8 +4,11 @@ import { Inter_Tight } from "next/font/google";
 const inter = Inter_Tight({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata = {
-  title: "Obonelli.dev",
-  description: "Oscar Bonelli — Full-Stack / Front-End Engineer",
+  title: "Oscar Bonelli | Full-Stack Engineer",
+  description: "Full-Stack & AI Engineer | Building high-performance apps with React, Next.js & Node.js 🚀",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
