@@ -31,8 +31,8 @@ export default function HomePage() {
           </h1>
 
           <p className="mt-2 text-[13.5px] leading-6 text-zinc-300 max-w-[65ch] mx-auto sm:mx-0">
-            Full-Stack / Front-End Engineer focused on building fast, beautiful,
-            and reliable web apps that ship to production.
+            Full-Stack Engineer · Python & AI Engineer · Building high-performance
+            products with React, Next.js & Node.js 🚀 | Creative problem solver ✨
           </p>
 
           <p className="mt-3 inline-flex items-center gap-2 text-sm text-zinc-400 justify-center sm:justify-start">
