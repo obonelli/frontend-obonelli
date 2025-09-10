@@ -1,3 +1,6 @@
+# Pipeline de CI/CD con GitHub Actions
+# Se ejecuta automáticamente cuando hay un push a la rama main
+# o cuando se abre un pull_request
 name: CI
 
 on:
@@ -6,17 +9,25 @@ on:
     branches: [main]
 
 jobs:
+  # --- Job 1: Lint ---
+  # Verifica el estilo y reglas del código usando ESLint
   lint:
     runs-on: ubuntu-latest
     steps:
+      # Descarga el código del repositorio
       - uses: actions/checkout@v4
+      # Configura Node.js v20 y cache de dependencias npm
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
+      # Instala dependencias limpias (npm ci = instalación reproducible)
       - run: npm ci
+      # Corre el linter
       - run: npm run lint
 
+  # --- Job 2: Typecheck ---
+  # Verifica los tipos de TypeScript
   typecheck:
     runs-on: ubuntu-latest
     steps:
@@ -28,8 +39,11 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
 
+  # --- Job 3: Build ---
+  # Compila la aplicación (ejecuta el build de producción de Next.js)
+  # Solo corre si lint y typecheck pasaron bien
   build:
-    needs: [lint, typecheck]
+    needs: [lint, typecheck] # dependencia de jobs anteriores
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,18 +54,22 @@ jobs:
       - run: npm ci
       - name: Build
         env:
-          NEXT_TELEMETRY_DISABLED: "1"
+          NEXT_TELEMETRY_DISABLED: "1" # desactiva la telemetría de Next.js
         run: npm run build
 
+  # --- Job 4: Security ---
+  # Análisis de seguridad después del build
   security:
-    needs: build
+    needs: build # depende de que el build haya sido exitoso
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Escaneo de vulnerabilidades en dependencias npm
       - name: Dependency Audit
         run: npm audit --production --audit-level=moderate || true
+      # Escaneo de secretos expuestos en el repo con Trufflehog
       - name: Secret Scan
         uses: trufflesecurity/trufflehog@main
         with:
-          path: ./
-          base: HEAD
+          path: ./ # escanea todo el repo
+          base: HEAD # revisa la última versión
