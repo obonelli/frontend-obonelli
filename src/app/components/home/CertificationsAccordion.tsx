@@ -52,6 +52,11 @@ const ITEMS: Item[] = [
         title: "AWS Lambda Foundations",
         provider: "AWS",
         url: "AWS_Lambda_Foundations.pdf"
+    },
+    {
+        title: "DevOps: Docker (Advanced)",
+        provider: "LinkedIn Learning",
+        url: "https://www.linkedin.com/learning/certificates/c702e91d149371b5dc0bb54e39cb7ca4745218f91ddbcf1581fafb7f2092dde7?trk=share_certificate"
     }
 ];
 
@@ -59,7 +64,7 @@ function badgeColor(provider?: string) {
     const v = (provider || "").toLowerCase();
     if (v.includes("hackerrank")) return "bg-purple-500";
     if (v.includes("linkedin")) return "bg-sky-500";
-    if (v === "aws") return "bg-yellow-400"; // 🟡 amarillo para AWS
+    if (v === "aws") return "bg-yellow-400";
     return "bg-zinc-400";
 }
 
