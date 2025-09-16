@@ -116,7 +116,8 @@ export default function ExperienceAccordion() {
                     <li>Backend: PHP,Java,Node.js, Python (Django, Flask, FastAPI).</li>
                     <li>Frontend: React.js, AngularJS, JavaScript, jQuery, Less/Sass.</li>
                     <li>Databases: MySQL, SQL Server, PostgreSQL, MongoDB.</li>
-                    <li>AI/ML: TensorFlow (classification, regression, computer vision); Vector DBs (Pinecone) for semantic search & RAG pipelines.</li>
+                    <li>AI/ML: TensorFlow (classification, regression, computer vision);</li>
+                    <li>Vector DBs (Pinecone) for semantic search & RAG pipelines.</li>
                     <li>E-commerce: Built platforms with React & Node.js, integrating APIs, payment gateways, and scalable features.</li>
                     <li>CMS: WordPress, Joomla, Shopify — custom themes and plugins as required.</li>
                     <li className="font-semibold">Achievements:</li>
