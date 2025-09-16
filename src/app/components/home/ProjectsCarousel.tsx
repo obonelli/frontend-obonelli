@@ -10,29 +10,52 @@ export default function ProjectsCarousel() {
 
     const projects: Project[] = [
         {
-            title: "Lunara Games",
+            title: "Raven Core — Backend Node stack",
             desc:
-                "Indie studio focused on crafting 2D experiences with AI-driven NPCs. Starting simple with CSS and Canvas, evolving into richer cross-platform worlds.",
-            tags: ["JavaScript", "Canvas", "AI NPCs", "Cross-Platform"],
-            href: "#",
-            live: false,
+                "Production-ready Node.js backend: Express + TypeScript, DynamoDB for Users, Prisma/MySQL for UserDetails, Redis cache, JWT auth, OpenAPI/Swagger, Jest tests, CI/CD, and observability via Sentry/Prometheus/Grafana.",
+            tags: [
+                "Node.js",
+                "Express",
+                "TypeScript",
+                "DynamoDB",
+                "Prisma",
+                "MySQL",
+                "Redis",
+                "JWT",
+                "OpenAPI",
+                "Jest",
+                "CI/CD",
+                "Sentry",
+                "Prometheus",
+                "Grafana"
+            ],
+            href: "https://github.com/obonelli/Raven-core",
+            live: true
         },
         {
             title: "Raven RAG — Private AI Search (Python + MySQL)",
             desc:
                 "Retrieval-Augmented Generation service with FastAPI + Prisma + MySQL. Stores embeddings in MySQL and performs hybrid search with LangChain, packaged with Docker and ready to integrate with Next.js apps.",
-            tags: ["Python", "FastAPI", "RAG", "Prisma", "MySQL", "LangChain", "Embeddings", "Docker"],
+            tags: [
+                "Python",
+                "FastAPI",
+                "RAG",
+                "Prisma",
+                "MySQL",
+                "LangChain",
+                "Embeddings",
+                "Docker"
+            ],
             href: "https://raven-rag.onrender.com/docs#/",
-            live: true,
+            live: true
         },
-
         {
             title: "OmniOps LLM Platform",
             desc:
                 "Autonomous AI layer that orchestrates processes, builds a live knowledge graph, and automates operations across the whole app — boosting efficiency and decision-making.",
             tags: ["Next.js", "LLM", "Agents", "Knowledge Graph", "Ops Automation", "Python"],
             href: "https://llmplatform.obonelli.dev/",
-            live: true,
+            live: true
         },
         {
             title: "Lux In Tenebris — AI Recruitment Platform",
@@ -40,7 +63,7 @@ export default function ProjectsCarousel() {
                 "Next.js 15 recruitment system that connects candidates with open roles, powered by AI-assisted matching, talent pool search, and technical screening. A modern job board built with scalability and real-time insights in mind.",
             tags: ["Next.js", "Prisma", "MySQL", "MUI", "NextAuth", "OpenAI"],
             href: "https://www.luxintenebris.mx/",
-            live: true,
+            live: true
         }
     ];
 
@@ -48,17 +71,10 @@ export default function ProjectsCarousel() {
         ref.current?.scrollBy({ left: dx, behavior: "smooth" });
 
     return (
-        <section
-            className={`${exo2.className} mt-12`}
-            role="region"
-            aria-labelledby="projects"
-        >
-            {/* Título + aviso */}
+        <section className={`${exo2.className} mt-12`} role="region" aria-labelledby="projects">
+            {/* Title + notice */}
             <div className="mb-4 flex items-center gap-3">
-                <h2
-                    id="projects"
-                    className="text-xl font-bold text-zinc-100 tracking-tight"
-                >
+                <h2 id="projects" className="text-xl font-bold text-zinc-100 tracking-tight">
                     Projects
                 </h2>
 
@@ -66,21 +82,15 @@ export default function ProjectsCarousel() {
                     <span
                         className="inline-flex items-center gap-2 text-xs px-2.5 py-1 rounded-md bg-zinc-800/70 ring-1 ring-zinc-700/60 text-zinc-300"
                         aria-live="polite"
-                        title="Los dominios/enlaces se publicarán en ≤ 48 horas."
+                        title="Links will be published shortly."
                     >
-                        <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            className="opacity-90"
-                            aria-hidden="true"
-                        >
+                        <svg width="14" height="14" viewBox="0 0 24 24" className="opacity-90" aria-hidden="true">
                             <path
                                 fill="currentColor"
                                 d="M12 1.75A10.25 10.25 0 1 0 22.25 12A10.263 10.263 0 0 0 12 1.75m.75 5a.75.75 0 0 0-1.5 0v5.19a.75.75 0 0 0 .22.53l3.38 3.38a.75.75 0 0 0 1.06-1.06L12.75 12.7Z"
                             />
                         </svg>
-                        All projects domains will go live very soon 🚀
+                        All projects are now live across their domains 🚀
                         <button
                             onClick={() => setShowNotice(false)}
                             className="ml-2 text-zinc-400 hover:text-zinc-200 transition"
@@ -97,7 +107,7 @@ export default function ProjectsCarousel() {
                 <div className="carousel-fade-left" aria-hidden />
                 <div className="carousel-fade-right" aria-hidden />
 
-                {/* Flechas */}
+                {/* Arrows */}
                 <button
                     type="button"
                     aria-label="Previous projects"
@@ -115,7 +125,7 @@ export default function ProjectsCarousel() {
                     ›
                 </button>
 
-                {/* Lista */}
+                {/* List */}
                 <div ref={ref} className="carousel">
                     {projects.map((p) => (
                         <ProjectCard key={p.title} {...p} />

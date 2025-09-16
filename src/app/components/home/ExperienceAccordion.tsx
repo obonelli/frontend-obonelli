@@ -31,9 +31,9 @@ export default function ExperienceAccordion() {
                 defaultOpen={!isMobile}
             >
                 <ul className="drawer-list list-disc pl-5 space-y-1.5 text-sm leading-6 text-zinc-200">
-                    <li>Frontend: React.js, Next.js, React Native (Expo), TypeScript.</li>
                     <li>Backend: Node.js (Express, Nest), Python (FastAPI); REST & GraphQL APIs.</li>
-                    <li>Databases: MySQL (Prisma ORM), MongoDB (Mongoose), PostgreSQL (Sequelize, TypeORM, SQLAlchemy).</li>
+                    <li>Frontend: React.js, Next.js, React Native (Expo), TypeScript.</li>
+                    <li>Databases: MySQL (Prisma ORM), MongoDB (Mongoose), PostgreSQL (Sequelize, TypeORM, SQLAlchemy), Redis</li>
                     <li>Cloud: AWS Lambda, Cloud Functions.</li>
                     <li>CI/CD: CircleCI & GitHub Actions for automated deployments.</li>
                     <li>Testing: Jest, React Testing Library, Enzyme.</li>
@@ -79,8 +79,12 @@ export default function ExperienceAccordion() {
                 metaClassName="italic"
             >
                 <ul className="drawer-list list-disc pl-5 space-y-1.5 text-sm leading-6 text-zinc-200">
-                    <li>PHP (Laravel), Node.js (Express), Java (Spring, Hibernate, Batch), React.js, React Native, Redux.</li>
-                    <li>Automation with Maven & Jenkins; AWS services; DB optimization (MySQL, SQL Server, PostgreSQL, MongoDB).</li>
+                    <li>PHP (Laravel), Node.js (Express), Java (Spring, Hibernate, Batch),Python (FastAPI)</li>
+                    <li>React.js, React Native, Redux, TypeScript, Javascript</li>
+                    <li>Automation with Maven & Jenkins; AWS services; </li>
+                    <li>Testing with Jest, React testing library, Junit</li>
+                    <li>DB optimization (MySQL, SQL Server, PostgreSQL, MongoDB).</li>
+                    <li>Data Processing: Worked with Apache Spark.</li>
                     <li>Improved e-commerce platform (+5% sales).</li>
                     <li>Loyalty points system (+25% retention).</li>
                     <li>UI redesign with UX team (+30% satisfaction).</li>
@@ -109,10 +113,11 @@ export default function ExperienceAccordion() {
                 metaClassName="italic"
             >
                 <ul className="drawer-list list-disc pl-5 space-y-1.5 text-sm leading-6 text-zinc-200">
-                    <li>Backend: PHP, Node.js, Python (Django, Flask, FastAPI).</li>
+                    <li>Backend: PHP,Java,Node.js, Python (Django, Flask, FastAPI).</li>
                     <li>Frontend: React.js, AngularJS, JavaScript, jQuery, Less/Sass.</li>
                     <li>Databases: MySQL, SQL Server, PostgreSQL, MongoDB.</li>
-                    <li>AI/ML: TensorFlow (classification, regression, computer vision); Vector DBs (Pinecone) for semantic search & RAG pipelines.</li>
+                    <li>AI/ML: TensorFlow (classification, regression, computer vision);</li>
+                    <li>Vector DBs (Pinecone) for semantic search & RAG pipelines.</li>
                     <li>E-commerce: Built platforms with React & Node.js, integrating APIs, payment gateways, and scalable features.</li>
                     <li>CMS: WordPress, Joomla, Shopify — custom themes and plugins as required.</li>
                     <li className="font-semibold">Achievements:</li>
