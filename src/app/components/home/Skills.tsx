@@ -12,6 +12,7 @@ export default function Skills() {
                 "MySQL",
                 "PostgreSQL",
                 "GraphQL / REST",
+                "Docker",
                 "Vercel / GCP",
                 "Nx / CI-CD",
             ]}
