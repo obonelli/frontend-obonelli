@@ -57,6 +57,11 @@ const ITEMS: Item[] = [
         title: "DevOps: Docker (Advanced)",
         provider: "LinkedIn Learning",
         url: "https://www.linkedin.com/learning/certificates/c702e91d149371b5dc0bb54e39cb7ca4745218f91ddbcf1581fafb7f2092dde7?trk=share_certificate"
+    },
+    {
+        title: "Fine-Tunning for LLMs (Advanced)",
+        provider: "LinkedIn Learning",
+        url: "https://www.linkedin.com/learning/certificates/c1e903feed38df2204620d887f209a9cf818e47b89e77e6f47c5114aa29424ed"
     }
 ];
 
