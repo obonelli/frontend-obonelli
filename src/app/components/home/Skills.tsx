@@ -5,6 +5,7 @@ export default function Skills() {
         <TagRow
             items={[
                 "React / Next.js",
+                "React Native",
                 "TypeScript",
                 "MUI / Tailwind",
                 "Node.js",
