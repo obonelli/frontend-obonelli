@@ -19,6 +19,11 @@ const ITEMS: Item[] = [
         url: "https://www.hackerrank.com/certificates/b625d7705021"
     },
     {
+        title: "React Native (Advanced)",
+        provider: "LinkedIn Learning",
+        url: "https://www.linkedin.com/learning/certificates/87384d2e5450ea0a313434e22b89cb1a54ecd2d26b7c03b10190bafbbd89f8f8"
+    },
+    {
         title: "Node.js (Intermediate)",
         provider: "HackerRank",
         url: "https://www.hackerrank.com/certificates/34c71b5ba35c"
