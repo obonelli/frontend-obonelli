@@ -24,35 +24,29 @@ export default function ExperienceAccordion() {
             {/* key forces remount when switching between mobile/desktop */}
             <Drawer
                 key={isMobile ? "m" : "d"}
-                title="Cloud Transit Xchange — Lead Full-Stack Engineer"
-                meta="06/2024 – 06/2025"
+                title="Self-Employed — Senior Software Engineer"
+                meta="04/2012 – Present"
                 titleClassName={`${orbitron.className} font-bold`}
                 metaClassName="italic"
-                defaultOpen={!isMobile}
             >
                 <ul className="drawer-list list-disc pl-5 space-y-1.5 text-sm leading-6 text-zinc-200">
-                    <li>Backend: Node.js (Express, Nest), Python (FastAPI); REST & GraphQL APIs.</li>
-                    <li>Frontend: React.js, Next.js, React Native (Expo), TypeScript.</li>
-                    <li>Databases: MySQL (Prisma ORM), MongoDB (Mongoose), PostgreSQL (Sequelize, TypeORM, SQLAlchemy), Redis</li>
-                    <li>Cloud: AWS Lambda, Cloud Functions.</li>
-                    <li>CI/CD: CircleCI & GitHub Actions for automated deployments.</li>
-                    <li>Testing: Jest, React Testing Library, Enzyme.</li>
-                    <li>Containers: Docker & Docker Compose for containerized environments.</li>
-                    <li>Version Control: Git workflows for collaboration.</li>
-                    <li>UI/UX: Prototypes and wireframes in Figma with cross-functional teams.</li>
+                    <li>Backend: PHP,Java,Node.js, Python (Django, Flask, FastAPI).</li>
+                    <li>Frontend: React.js, AngularJS, JavaScript, jQuery, Less/Sass.</li>
+                    <li>Databases: MySQL, SQL Server, PostgreSQL, MongoDB.</li>
+                    <li>AI/ML: TensorFlow (classification, regression, computer vision);</li>
+                    <li>Vector DBs (Pinecone) for semantic search & RAG pipelines.</li>
+                    <li>E-commerce: Built platforms with React & Node.js, integrating APIs, payment gateways, and scalable features.</li>
+                    <li>CMS: WordPress, Joomla, Shopify — custom themes and plugins as required.</li>
+                    <li className="font-semibold">Achievements:</li>
                     <ul className="list-disc pl-8 space-y-1.5 text-sm leading-6 text-zinc-200">
-                        <li>Refactored legacy v1 under strict deadlines, enhancing functionality and strengthening codebase.</li>
-                        <li>Led the development of a next-gen UI with a scalable white-label system; mentored junior developers.</li>
-                        <li>Implemented Storybook, reducing component build time by 25%.</li>
-                        <li>Reduced infrastructure costs by 20% by migrating services to AWS Lambda & Cloud Functions.</li>
-                        <li>Improved deployment frequency by 30% through CI/CD automation.</li>
+                        <li>Developed tailored e-commerce platforms and admin systems for 50+ clients.</li>
+                        <li>Achieved 95% customer satisfaction across diverse industries.</li>
                     </ul>
                 </ul>
             </Drawer>
-
             <Drawer
                 title="Persistent Systems — Lead Engineer"
-                meta="05/2023 – 06/2024"
+                meta="09/2023 – 06/2025"
                 titleClassName={`${orbitron.className} font-bold`}
                 metaClassName="italic"
             >
@@ -74,7 +68,7 @@ export default function ExperienceAccordion() {
 
             <Drawer
                 title="Coppel — Software Developer"
-                meta="08/2018 – 04/2023"
+                meta="08/2018 – 08/2023"
                 titleClassName={`${orbitron.className} font-bold`}
                 metaClassName="italic"
             >
@@ -103,28 +97,6 @@ export default function ExperienceAccordion() {
                     <li>DB tuning (MySQL, SQL Server); −25% server load.</li>
                     <li>Stack: PHP OOP MVC, React.js, Vanilla JS, jQuery, Bootstrap.</li>
                     <li>On-time, on-budget delivery (+15% client satisfaction).</li>
-                </ul>
-            </Drawer>
-
-            <Drawer
-                title="Self-Employed — Senior Software Engineer"
-                meta="04/2012 – Present"
-                titleClassName={`${orbitron.className} font-bold`}
-                metaClassName="italic"
-            >
-                <ul className="drawer-list list-disc pl-5 space-y-1.5 text-sm leading-6 text-zinc-200">
-                    <li>Backend: PHP,Java,Node.js, Python (Django, Flask, FastAPI).</li>
-                    <li>Frontend: React.js, AngularJS, JavaScript, jQuery, Less/Sass.</li>
-                    <li>Databases: MySQL, SQL Server, PostgreSQL, MongoDB.</li>
-                    <li>AI/ML: TensorFlow (classification, regression, computer vision);</li>
-                    <li>Vector DBs (Pinecone) for semantic search & RAG pipelines.</li>
-                    <li>E-commerce: Built platforms with React & Node.js, integrating APIs, payment gateways, and scalable features.</li>
-                    <li>CMS: WordPress, Joomla, Shopify — custom themes and plugins as required.</li>
-                    <li className="font-semibold">Achievements:</li>
-                    <ul className="list-disc pl-8 space-y-1.5 text-sm leading-6 text-zinc-200">
-                        <li>Developed tailored e-commerce platforms and admin systems for 50+ clients.</li>
-                        <li>Achieved 95% customer satisfaction across diverse industries.</li>
-                    </ul>
                 </ul>
             </Drawer>
         </div>
